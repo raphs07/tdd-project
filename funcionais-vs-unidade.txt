@@ -1,0 +1,5 @@
+Teste Funcional:
+Verifica o sistema do ponto de vista do usuário, simulando ações que um usuário real faria.
+
+Teste de Unidade:
+Verifica pequenas partes do código de forma isolada, como funções, métodos ou classes.
