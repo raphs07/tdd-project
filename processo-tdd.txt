@@ -1,0 +1,10 @@
+O processo TDD começa com a criação de um teste que inicialmente falha.
+Depois, escrevemos o código necessário para fazer o teste passar.
+Quando o teste passa, podemos refatorar o código sem alterar seu comportamento.
+Esse ciclo é repetido durante o desenvolvimento:
+
+1. Escrever o teste.
+2. Executar o teste e verificar a falha.
+3. Implementar o código necessário.
+4. Executar novamente até o teste passar.
+5. Refatorar quando necessário.
