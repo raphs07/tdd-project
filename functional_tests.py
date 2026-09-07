@@ -38,29 +38,22 @@ class NewVisitorTest(unittest.TestCase):
             'Enter a to-do item'
         )
 
-        # Ela digita "Estudar testes funcionais"
-        inputbox.send_keys('Estudar testes funcionais')
-
-        # Ela aperta Enter
+        inputbox = self.browser.find_element(By.ID, 'id_new_item')
+        inputbox.send_keys('Estudar testes de unidade')
         inputbox.send_keys(Keys.ENTER)
-
-        # Espera a página atualizar
         time.sleep(1)
 
-        # A tarefa deve aparecer na tabela
-        table = self.browser.find_element(
-            By.ID, 'id_list_table'
+        table = self.browser.find_element(By.ID, 'id_list_table')
+        rows = table.find_elements(By.TAG_NAME, 'tr')
+
+        self.assertIn(
+            '1: Estudar testes funcionais',
+            [row.text for row in rows]
         )
 
-        rows = table.find_elements(
-            By.TAG_NAME, 'tr'
-        )
-
-        self.assertTrue(
-            any(
-                row.text == '1: Estudar testes funcionais'
-                for row in rows
-            )
+        self.assertIn(
+            '2: Estudar testes de unidade',
+            [row.text for row in rows]
         )
 
 
